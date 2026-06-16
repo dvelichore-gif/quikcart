@@ -35,16 +35,16 @@ export default function OrderSuccess() {
 
           <h1 style={{ fontSize: 26, fontWeight: 800, color: '#1a1f2e', marginBottom: 8 }}>Order confirmed!</h1>
           <p style={{ fontSize: 15, color: '#6b7280', marginBottom: 24, lineHeight: 1.6 }}>
-            Thank you for shopping with QuikCart. Your payment was successful and your Amazon order is being placed right now.
+            Thank you for shopping with QuikCart. Your payment was successful and your QuikCart order is being placed right now.
           </p>
 
           {/* What happens next */}
           <div style={{ background: 'white', border: '1px solid #e0e6ef', borderRadius: 10, padding: '20px 24px', marginBottom: 20, textAlign: 'left' }}>
             <h2 style={{ fontSize: 15, fontWeight: 700, color: '#1a1f2e', marginBottom: 14 }}>What happens next</h2>
             {[
-              ['⚡', 'Amazon order placed',     'Your items are being ordered on Amazon right now — automatically.'],
+              ['⚡', 'QuikCart order placed',     'Your items are being ordered on QuikCart right now — automatically.'],
               ['📧', 'Confirmation email sent',  'A full receipt with your order number has been emailed to you.'],
-              ['📦', 'Dispatched from Amazon',   'Your order ships from Amazon's warehouse within 1–2 working days.'],
+              ['📦', 'Dispatched from QuikCart',   'Your order ships from QuikCarts warehouse within 1–2 working days.'],
               ['🚚', 'Delivered to your door',   'Standard delivery 3–5 working days. Tracking number in your email.'],
             ].map(([icon, title, desc]) => (
               <div key={title} style={{ display: 'flex', gap: 12, marginBottom: 14, alignItems: 'flex-start' }}>
