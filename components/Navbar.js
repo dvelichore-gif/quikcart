@@ -6,13 +6,17 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useCart } from '../pages/_app'
+import { useCart, useCurrency, CURRENCIES } from '../pages/_app'
+import HelpCentreModal from './HelpCentreModal'
 
 const CATEGORIES = ['Electronics', 'Home & Living', 'Wellness', 'Fashion', 'Sports', 'Books']
 
 export default function Navbar() {
   const { totalItems } = useCart()
+  const { currency, changeCurrency } = useCurrency()
   const [query, setQuery] = useState('')
+  const [helpOpen, setHelpOpen] = useState(false)
+  const [currencyOpen, setCurrencyOpen] = useState(false)
   const router = useRouter()
 
   function handleSearch(e) {
@@ -26,14 +30,43 @@ export default function Navbar() {
       <div style={{ background: '#1a1f2e', color: 'rgba(255,255,255,0.65)', fontSize: 11, padding: '5px 16px', display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
         <span>🇬🇧 United Kingdom</span>
         <span>Free delivery on orders over £25</span>
-        <span style={{ marginLeft: 'auto', display: 'flex', gap: 14 }}>
-          <Link href="/orders" style={{ color: 'rgba(255,255,255,0.65)' }}>My Orders</Link>
+        <span style={{ marginLeft: 'auto', display: 'flex', gap: 14, alignItems: 'center', position: 'relative' }}>
+          <Link href="/cart" style={{ color: 'rgba(255,255,255,0.65)' }}>My Orders</Link>
           <span>|</span>
-          <Link href="#" style={{ color: 'rgba(255,255,255,0.65)' }}>Help Centre</Link>
+          <span onClick={() => setHelpOpen(true)} style={{ color: 'rgba(255,255,255,0.65)', cursor: 'pointer' }}>Help Centre</span>
           <span>|</span>
-          <span>£ GBP</span>
+          <span style={{ position: 'relative' }}>
+            <span onClick={() => setCurrencyOpen(o => !o)} style={{ color: 'rgba(255,255,255,0.65)', cursor: 'pointer' }}>
+              {CURRENCIES[currency].symbol} {currency} ▾
+            </span>
+            {currencyOpen && (
+              <div style={{
+                position: 'absolute', top: '100%', right: 0, marginTop: 6,
+                background: 'white', borderRadius: 8, boxShadow: '0 8px 24px rgba(0,0,0,0.25)',
+                overflow: 'hidden', minWidth: 170, zIndex: 200,
+              }}>
+                {Object.entries(CURRENCIES).map(([code, info]) => (
+                  <div
+                    key={code}
+                    onClick={() => { changeCurrency(code); setCurrencyOpen(false) }}
+                    style={{
+                      padding: '9px 14px', fontSize: 12, color: '#1a1f2e', cursor: 'pointer',
+                      background: code === currency ? '#e8f1fb' : 'white',
+                      fontWeight: code === currency ? 600 : 400,
+                    }}
+                    onMouseOver={e => e.currentTarget.style.background = '#f5f7fa'}
+                    onMouseOut={e  => e.currentTarget.style.background = code === currency ? '#e8f1fb' : 'white'}
+                  >
+                    {info.symbol} {info.label}
+                  </div>
+                ))}
+              </div>
+            )}
+          </span>
         </span>
       </div>
+
+      {helpOpen && <HelpCentreModal onClose={() => setHelpOpen(false)} />}
 
       {/* ── MAIN NAV ── */}
       <nav style={{ background: '#1a6fc4', padding: '8px 16px', display: 'flex', alignItems: 'center', gap: 10, position: 'sticky', top: 0, zIndex: 100 }}>

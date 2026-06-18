@@ -2,11 +2,12 @@
 // Reusable product card used on homepage, shop, and search results
 
 import { useRouter } from 'next/router'
-import { useCart } from '../pages/_app'
+import { useCart, useCurrency } from '../pages/_app'
 
 export default function ProductCard({ product, onAddToCart }) {
   const router = useRouter()
   const { addItem } = useCart()
+  const { formatPrice } = useCurrency()
   const save = product.original_price
     ? Math.round((1 - product.price / product.original_price) * 100)
     : 0
@@ -39,10 +40,10 @@ export default function ProductCard({ product, onAddToCart }) {
         </div>
         <div>
           <span className="product-card__price">
-            <sup>£</sup>{product.price}
+            {formatPrice(product.price)}
           </span>
           {product.original_price && (
-            <span className="product-card__was">£{product.original_price}</span>
+            <span className="product-card__was">{formatPrice(product.original_price)}</span>
           )}
         </div>
         <div className="product-card__free">✓ Free delivery</div>

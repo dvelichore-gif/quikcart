@@ -13,6 +13,49 @@ export function useCart() {
   return useContext(CartContext)
 }
 
+/* ── CURRENCY CONTEXT ─────────────────────────────── */
+// Static rates for display only. Stripe always charges in GBP —
+// these are just for showing customers an approximate price.
+export const CURRENCIES = {
+  GBP: { symbol: '£', rate: 1,      label: 'GBP — British Pound' },
+  USD: { symbol: '$', rate: 1.27,   label: 'USD — US Dollar' },
+  EUR: { symbol: '€', rate: 1.17,   label: 'EUR — Euro' },
+}
+
+export const CurrencyContext = createContext(null)
+
+export function useCurrency() {
+  return useContext(CurrencyContext)
+}
+
+function CurrencyProvider({ children }) {
+  const [currency, setCurrency] = useState('GBP')
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('quikcart_currency')
+      if (saved && CURRENCIES[saved]) setCurrency(saved)
+    } catch {}
+  }, [])
+
+  function changeCurrency(code) {
+    setCurrency(code)
+    try { localStorage.setItem('quikcart_currency', code) } catch {}
+  }
+
+  // Converts a GBP amount into the selected display currency
+  function formatPrice(gbpAmount) {
+    const { symbol, rate } = CURRENCIES[currency]
+    return `${symbol}${(gbpAmount * rate).toFixed(2)}`
+  }
+
+  return (
+    <CurrencyContext.Provider value={{ currency, changeCurrency, formatPrice, symbol: CURRENCIES[currency].symbol }}>
+      {children}
+    </CurrencyContext.Provider>
+  )
+}
+
 function CartProvider({ children }) {
   const [items, setItems] = useState([])
 
@@ -67,7 +110,9 @@ function CartProvider({ children }) {
 export default function App({ Component, pageProps }) {
   return (
     <CartProvider>
-      <Component {...pageProps} />
+      <CurrencyProvider>
+        <Component {...pageProps} />
+      </CurrencyProvider>
     </CartProvider>
   )
 }
