@@ -59,7 +59,10 @@ export default function Shop({ products }) {
         {/* ── SHOP HEADER ──────────────────────────────── */}
         <div style={{ background: '#14549a', padding: '14px 16px', color: 'white' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-            <h1 style={{ fontSize: 18, fontWeight: 700, marginBottom: 10 }}>
+            <h1 
+              onClick={() => setCat('All')}
+              style={{ fontSize: 18, fontWeight: 700, marginBottom: 10, cursor: 'pointer' }}
+            >
               {cat === 'All' ? 'All Products' : cat}
             </h1>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center' }}>
@@ -91,7 +94,7 @@ export default function Shop({ products }) {
           <aside style={{ background: 'white', padding: '16px 14px', borderRight: '1px solid #e0e6ef', minHeight: 600, position: 'sticky', top: 98 }}>
 
             <SbSection title="Category">
-              <FilterBtn active={cat === 'All'} onClick={() => setCat('All')}>All</FilterBtn>
+              <FilterBtn active={cat === 'All'} onClick={() => setCat('All')}>All Categories</FilterBtn>
               {CATEGORIES.map(c => (
                 <FilterBtn key={c} active={cat === c} onClick={() => setCat(c)}>{c}</FilterBtn>
               ))}
@@ -106,7 +109,6 @@ export default function Shop({ products }) {
                   style={{ flex: 1, padding: '5px 7px', border: '1px solid #dde3ec', borderRadius: 4, fontSize: 12, textAlign: 'center', fontFamily: 'inherit', color: '#1a1f2e' }} />
               </div>
             </SbSection>
-
 
             {/* Reset */}
             {(cat !== 'All' || search || minP || maxP || minRat > 0) && (

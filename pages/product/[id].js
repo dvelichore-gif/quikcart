@@ -181,7 +181,7 @@ export default function ProductPage({ product, related }) {
             <div style={{ maxWidth: 1200, margin: '0 auto' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14 }}>
                 <span style={{ display: 'inline-block', width: 4, height: 18, background: '#1a6fc4', borderRadius: 2 }} />
-                <h2 style={{ fontSize: 16, fontWeight: 700, color: '#1a1f2e' }}>Related products</h2>
+                <h2 style={{ fontSize: 16, fontWeight: 700, color: '#1a1f2e' }}>Other products</h2>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 10 }}>
                 {related.map(p => <ProductCard key={p.id} product={p} onAddToCart={msg => setToast(`✓ "${msg.slice(0,28)}..." added to cart`)} />)}
