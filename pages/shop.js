@@ -50,7 +50,7 @@ export default function Shop({ products }) {
     <>
       <Head>
         <title>Shop — QuikCart</title>
-        <meta name="description" content="Browse all products on QuikCart. Auto-fulfilled via Amazon." />
+        <meta name="description" content="Browse products on QuikCart" />
       </Head>
 
       <div className="page-wrap">
@@ -107,21 +107,12 @@ export default function Shop({ products }) {
               </div>
             </SbSection>
 
-            <SbSection title="Rating">
-              <FilterBtn active={minRat === 0}   onClick={() => setMinRat(0)}>All ratings</FilterBtn>
-              <FilterBtn active={minRat === 4}   onClick={() => setMinRat(4)}>★ 4.0+</FilterBtn>
-              <FilterBtn active={minRat === 4.5} onClick={() => setMinRat(4.5)}>★ 4.5+</FilterBtn>
-            </SbSection>
-
             <SbSection title="Discount">
               <FilterBtn active={false} onClick={() => {}}>10%+ off</FilterBtn>
               <FilterBtn active={false} onClick={() => {}}>25%+ off</FilterBtn>
               <FilterBtn active={false} onClick={() => {}}>50%+ off</FilterBtn>
             </SbSection>
 
-            <SbSection title="Shipping">
-              <FilterBtn active={false} onClick={() => {}}>All</FilterBtn>
-              <FilterBtn active={false} onClick={() => {}}>Free delivery</FilterBtn>
             </SbSection>
 
             {/* Reset */}

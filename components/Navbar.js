@@ -93,10 +93,10 @@ export default function Navbar() {
         {/* Right side */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginLeft: 'auto', color: 'white', fontSize: 12, flexShrink: 0 }}>
           <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.3, cursor: 'pointer' }}>
-            <strong style={{ fontSize: 12 }}>Sign in</strong>
+            <strong style={{ fontSize: 16 }}>Sign in</strong>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.3, cursor: 'pointer' }}>
-            <strong style={{ fontSize: 12 }}>Wishlist</strong>
+            <strong style={{ fontSize: 16 }}>Wishlist</strong>
           </div>
           <Link href="/cart" style={{ display: 'flex', alignItems: 'center', gap: 6, background: '#ff6b00', padding: '6px 12px', borderRadius: 6, color: 'white', textDecoration: 'none' }}>
             🛒
