@@ -95,7 +95,7 @@ export default function Navbar() {
           <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 0.0, cursor: 'pointer' }}>
             <strong style={{ fontSize: 16 }}>Sign in</strong>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.3, cursor: 'pointer' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 5.3, cursor: 'pointer' }}>
             <strong style={{ fontSize: 16 }}>Wishlist</strong>
           </div>
           <Link href="/cart" style={{ display: 'flex', alignItems: 'center', gap: 6, background: '#ff6b00', padding: '6px 12px', borderRadius: 6, color: 'white', textDecoration: 'none' }}>
