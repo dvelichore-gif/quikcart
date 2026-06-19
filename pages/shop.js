@@ -70,7 +70,7 @@ export default function Shop({ products }) {
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <h1 
               onClick={resetToAll}
-              style={{ fontSize: 18, fontWeight: 700, marginBottom: 10, cursor: 'pointer' }}
+              style={{ fontSize: 18, fontWeight: 700, marginBottom: 10 }}
             >
               {cat === 'All' ? 'All Categories' : cat}
             </h1>
