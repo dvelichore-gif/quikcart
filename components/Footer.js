@@ -30,8 +30,8 @@ export default function Footer() {
           <div>
             <h4 style={{ color: 'rgba(255,255,255,0.8)', fontSize: 13, fontWeight: 600, marginBottom: 10 }}>Trust & Safety</h4>
             <div style={{ fontSize: 12, lineHeight: 1.9 }}>
-              <div>🔒 Secure payments (Stripe)</div>
-              <div>⚡ Auto Amazon fulfillment</div>
+              <div>🔒 Secure payments</div>
+              <div>⚡ Auto Fulfillment</div>
               <div>📧 Instant email confirmation</div>
               <div>🚚 Free UK delivery over £25</div>
               <div>↩️ 14-day return policy</div>
@@ -41,7 +41,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: 16, display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 10, fontSize: 11 }}>
-          <span>© 2025 QuikCart. All rights reserved.</span>
+          <span>© 2026 QuikCart. All rights reserved.</span>
           <span style={{ display: 'flex', gap: 16 }}>
             <Link href="#" style={{ color: 'rgba(255,255,255,0.4)' }}>Privacy Policy</Link>
             <Link href="#" style={{ color: 'rgba(255,255,255,0.4)' }}>Terms of Service</Link>

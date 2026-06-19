@@ -81,7 +81,7 @@ export default function HelpCentreModal({ onClose }) {
                 <input value={name} onChange={e => setName(e.target.value)} placeholder="John Smith" style={inputStyle} />
               </Field>
 
-              <Field label="Your email (optional, so we can reply)">
+              <Field label="Your email">
                 <input value={email} onChange={e => setEmail(e.target.value)} placeholder="you@example.com" type="email" style={inputStyle} />
               </Field>
 
