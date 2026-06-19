@@ -107,13 +107,7 @@ export default function Shop({ products }) {
               </div>
             </SbSection>
 
-            <SbSection title="Discount">
-              <FilterBtn active={false} onClick={() => {}}>10%+ off</FilterBtn>
-              <FilterBtn active={false} onClick={() => {}}>25%+ off</FilterBtn>
-              <FilterBtn active={false} onClick={() => {}}>50%+ off</FilterBtn>
-            </SbSection>
 
-            
             {/* Reset */}
             {(cat !== 'All' || search || minP || maxP || minRat > 0) && (
               <button onClick={() => { setCat('All'); setSearch(''); setMinP(''); setMaxP(''); setMinRat(0) }}
