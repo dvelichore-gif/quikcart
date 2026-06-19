@@ -113,6 +113,32 @@ export default function Home({ products }) {
             </div>
           </div>
 
+          {/* Right: Flash deals panel */}
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <div style={{ background: '#e02020', color: 'white', borderRadius: '10px 10px 0 0', padding: '8px 12px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <span style={{ fontSize: 13, fontWeight: 700 }}>⚡ Flash Deals</span>
+              <span style={{ fontSize: 11, background: 'rgba(0,0,0,0.2)', padding: '2px 7px', borderRadius: 4 }}>03:47:22</span>
+            </div>
+            <div style={{ background: 'white', borderRadius: '0 0 10px 10px', overflow: 'hidden' }}>
+              {flashDeals.map(p => (
+                <div key={p.id} onClick={() => router.push(`/product/${p.id}`)}
+                  style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '8px 10px', borderBottom: '1px solid #f0f2f5', cursor: 'pointer', transition: 'background 0.15s' }}
+                  onMouseOver={e => e.currentTarget.style.background = '#f5f7fa'}
+                  onMouseOut={e  => e.currentTarget.style.background = 'white'}
+                >
+                  <span style={{ fontSize: 24, flexShrink: 0 }}>{p.emoji}</span>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ fontSize: 11, color: '#1a1f2e', lineHeight: 1.3, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.name}</div>
+                    <div>
+                      <span style={{ color: '#e02020', fontSize: 13, fontWeight: 700 }}>£{p.price}</span>
+                      {p.original_price && <span style={{ fontSize: 10, color: '#6b7280', textDecoration: 'line-through', marginLeft: 4 }}>£{p.original_price}</span>}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
 
         {/* ── TRUST STRIP ──────────────────────────────── */}
         <div style={{ background: 'white', borderBottom: '1px solid #e0e6ef', padding: '8px 16px', display: 'flex', justifyContent: 'center', gap: 24, flexWrap: 'wrap' }}>
@@ -161,14 +187,14 @@ export default function Home({ products }) {
         </div>
 
         {/* ── BEST SELLERS ─────────────────────────────── */}
-        <Section title="Best sellers this week" link="/shop">
+        <Section title="Best sellers" link="/shop">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 10 }}>
             {bestSellers.map(p => <ProductCard key={p.id} product={p} onAddToCart={msg => setToast(`✓ "${msg.slice(0,28)}..." added to cart`)} />)}
           </div>
         </Section>
 
         {/* ── FLASH DEALS ──────────────────────────────── */}
-        <Section title="⚡ Flash deals — ends tonight" link="/shop?badge=deal">
+        <Section title="⚡ Flash deals — ends soon" link="/shop?badge=deal">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 10 }}>
             {flashDeals.map(p => <ProductCard key={p.id} product={p} onAddToCart={msg => setToast(`✓ "${msg.slice(0,28)}..." added to cart`)} />)}
           </div>
@@ -182,7 +208,7 @@ export default function Home({ products }) {
             {[
               ['1','Browse & add to cart','Find products from our catalogue'],
               ['2','Secure Checkout',     'Pay via Stripe — encrypted end-to-end'],
-              ['3','Order Placement',      'We place your order within seconds'],
+              ['3','Order Placement',     'We place your order within seconds'],
               ['4','Email confirmation',  'Full receipt + tracking number sent instantly'],
             ].map(([n,t,d]) => (
               <div key={n} style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 10, padding: '16px 12px' }}>
