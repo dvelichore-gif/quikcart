@@ -12,14 +12,14 @@ import Toast from '../components/Toast'
 import { getProducts } from '../lib/products'
 
 const CATEGORIES = [
-  { name: 'Electronics',   emoji: '💻', count: '1,200+', slug: 'Electronics' },
-  { name: 'Home & Living', emoji: '🏡', count: '850+',   slug: 'Home & Living' },
-  { name: 'Wellness',      emoji: '🌿', count: '430+',   slug: 'Wellness' },
-  { name: 'Fashion',       emoji: '👗', count: '620+',   slug: 'Fashion' },
-  { name: 'Sports',        emoji: '⚽', count: '340+',   slug: 'Sports' },
-  { name: 'Books',         emoji: '📚', count: '2,000+', slug: 'Books' },
-  { name: 'Gaming',        emoji: '🎮', count: '290+',   slug: 'Electronics' },
-  { name: 'Gifts',         emoji: '🎁', count: '500+',   slug: '' },
+  { name: 'Electronics',   emoji: '💻',  slug: 'Electronics' },
+  { name: 'Home & Living', emoji: '🏡',  slug: 'Home & Living' },
+  { name: 'Wellness',      emoji: '🌿',  slug: 'Wellness' },
+  { name: 'Fashion',       emoji: '👗',  slug: 'Fashion' },
+  { name: 'Sports',        emoji: '⚽',  slug: 'Sports' },
+  { name: 'Books',         emoji: '📚',  slug: 'Books' },
+  { name: 'Gaming',        emoji: '🎮',  slug: 'Electronics' },
+  { name: 'Gifts',         emoji: '🎁',  slug: 'Gifts' },
 ]
 
 const ICON_CATS = [
@@ -113,32 +113,6 @@ export default function Home({ products }) {
             </div>
           </div>
 
-          {/* Right: Flash deals panel */}
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <div style={{ background: '#e02020', color: 'white', borderRadius: '10px 10px 0 0', padding: '8px 12px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-              <span style={{ fontSize: 13, fontWeight: 700 }}>⚡ Flash Deals</span>
-              <span style={{ fontSize: 11, background: 'rgba(0,0,0,0.2)', padding: '2px 7px', borderRadius: 4 }}>03:47:22</span>
-            </div>
-            <div style={{ background: 'white', borderRadius: '0 0 10px 10px', overflow: 'hidden' }}>
-              {flashDeals.map(p => (
-                <div key={p.id} onClick={() => router.push(`/product/${p.id}`)}
-                  style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '8px 10px', borderBottom: '1px solid #f0f2f5', cursor: 'pointer', transition: 'background 0.15s' }}
-                  onMouseOver={e => e.currentTarget.style.background = '#f5f7fa'}
-                  onMouseOut={e  => e.currentTarget.style.background = 'white'}
-                >
-                  <span style={{ fontSize: 24, flexShrink: 0 }}>{p.emoji}</span>
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ fontSize: 11, color: '#1a1f2e', lineHeight: 1.3, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.name}</div>
-                    <div>
-                      <span style={{ color: '#e02020', fontSize: 13, fontWeight: 700 }}>£{p.price}</span>
-                      {p.original_price && <span style={{ fontSize: 10, color: '#6b7280', textDecoration: 'line-through', marginLeft: 4 }}>£{p.original_price}</span>}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
 
         {/* ── TRUST STRIP ──────────────────────────────── */}
         <div style={{ background: 'white', borderBottom: '1px solid #e0e6ef', padding: '8px 16px', display: 'flex', justifyContent: 'center', gap: 24, flexWrap: 'wrap' }}>

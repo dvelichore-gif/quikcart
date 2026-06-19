@@ -106,7 +106,7 @@ export default function ProductPage({ product, related }) {
                     ? '✓ FREE Standard delivery — Estimated 3–5 Working Days'
                     : '£2.99 standard delivery — or FREE on orders over £25'}
                 </div>
-                <div style={{ color: '#444', marginTop: 4 }}>📦 Auto-fulfilled via Amazon — ordered instantly when you pay</div>
+                <div style={{ color: '#444', marginTop: 4 }}>📦 Dispatched instantly when you pay</div>
               </div>
 
               {/* Description */}

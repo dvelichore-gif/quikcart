@@ -69,7 +69,7 @@ export default function Cart() {
                         <Link href={`/product/${item.id}`} style={{ fontSize: 13, fontWeight: 600, color: '#1a1f2e', lineHeight: 1.4, display: 'block', marginBottom: 3 }}>
                           {item.name}
                         </Link>
-                        <div style={{ fontSize: 11, color: '#81B29A', fontWeight: 600 }}>✓ Free delivery · Auto-fulfilled via Amazon</div>
+                        <div style={{ fontSize: 11, color: '#81B29A', fontWeight: 600 }}>✓ Free delivery · Auto-Fulfilled</div>
                         {save > 0 && <div style={{ fontSize: 11, color: '#e02020', marginTop: 2 }}>You save {save}%</div>}
                       </div>
                     </div>
@@ -149,7 +149,7 @@ export default function Cart() {
 
               {/* Trust */}
               <div style={{ marginTop: 14, borderTop: '1px solid #e0e6ef', paddingTop: 12 }}>
-                {[['🔒','Secure Stripe payment'],['⚡','Amazon order placed instantly'],['📧','Email confirmation sent'],['↩️','14-day returns policy']].map(([icon, label]) => (
+                {[['🔒','Secure Stripe payment'],['⚡','Order placed instantly'],['📧','Email confirmation sent'],['↩️','14-day returns policy']].map(([icon, label]) => (
                   <div key={label} style={{ display: 'flex', gap: 7, marginBottom: 5, fontSize: 11, color: '#6b7280', alignItems: 'center' }}>
                     <span>{icon}</span> {label}
                   </div>
