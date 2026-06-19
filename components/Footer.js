@@ -13,7 +13,7 @@ export default function Footer() {
             <div style={{ fontSize: 24, fontWeight: 800, color: 'white', marginBottom: 8 }}>
               Quik<span style={{ color: '#ff6b00' }}>Cart</span>
             </div>
-            <p style={{ fontSize: 12, lineHeight: 1.7 }}>Auto-fulfilled via Amazon. Every order placed instantly the moment you pay.</p>
+            <p style={{ fontSize: 12, lineHeight: 1.7 }}>Every order placed instantly the moment you pay.</p>
           </div>
           <div>
             <h4 style={{ color: 'rgba(255,255,255,0.8)', fontSize: 13, fontWeight: 600, marginBottom: 10 }}>Shop</h4>
