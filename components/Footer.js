@@ -31,7 +31,7 @@ export default function Footer() {
             <h4 style={{ color: 'rgba(255,255,255,0.8)', fontSize: 13, fontWeight: 600, marginBottom: 10 }}>Trust & Safety</h4>
             <div style={{ fontSize: 12, lineHeight: 1.9 }}>
               <div>🔒 Secure payments</div>
-              <div>⚡ Auto fulfillment</div>
+              <div>⚡ Order placed instantly</div>
               <div>📧 Instant email confirmation</div>
               <div>🚚 Free UK delivery over £25</div>
               <div>↩️ 14-day return policy</div>

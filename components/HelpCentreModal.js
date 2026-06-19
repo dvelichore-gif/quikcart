@@ -89,7 +89,7 @@ export default function HelpCentreModal({ onClose }) {
                 <textarea
                   value={message}
                   onChange={e => setMessage(e.target.value)}
-                  placeholder="Tell us what's going on..."
+                  placeholder="Tell us what the issue is..."
                   rows={5}
                   style={{ ...inputStyle, resize: 'vertical', fontFamily: 'inherit' }}
                 />
