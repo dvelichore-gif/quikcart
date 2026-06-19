@@ -93,12 +93,10 @@ export default function Navbar() {
         {/* Right side */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginLeft: 'auto', color: 'white', fontSize: 12, flexShrink: 0 }}>
           <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.3, cursor: 'pointer' }}>
-            <small style={{ fontSize: 10, opacity: 0.7 }}>Hello, sign in</small>
-            <strong style={{ fontSize: 12 }}>Account</strong>
+            <strong style={{ fontSize: 12 }}>Sign in</strong>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.3, cursor: 'pointer' }}>
-            <small style={{ fontSize: 10, opacity: 0.7 }}>My</small>
-            <strong style={{ fontSize: 12 }}>Wishlist ♡</strong>
+            <strong style={{ fontSize: 12 }}>Wishlist</strong>
           </div>
           <Link href="/cart" style={{ display: 'flex', alignItems: 'center', gap: 6, background: '#ff6b00', padding: '6px 12px', borderRadius: 6, color: 'white', textDecoration: 'none' }}>
             🛒
@@ -117,7 +115,6 @@ export default function Navbar() {
           </Link>
         ))}
         <Link href="/shop?badge=deal" style={{ ...snStyle, color: '#ff6b00' }}>⚡ Flash Deals</Link>
-        <Link href="/shop?free=true"  style={snStyle}>🚚 Free Shipping</Link>
       </div>
     </>
   )

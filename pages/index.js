@@ -49,8 +49,8 @@ export default function Home({ products }) {
   return (
     <>
       <Head>
-        <title>QuikCart — Shop anything, auto-delivered</title>
-        <meta name="description" content="Browse millions of products. We place your Amazon order automatically the moment you pay." />
+        <title>QuikCart — Shop for anything, auto-delivered</title>
+        <meta name="description" content="Browse endless products. We place your order automatically the moment you pay." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -142,7 +142,7 @@ export default function Home({ products }) {
 
         {/* ── TRUST STRIP ──────────────────────────────── */}
         <div style={{ background: 'white', borderBottom: '1px solid #e0e6ef', padding: '8px 16px', display: 'flex', justifyContent: 'center', gap: 24, flexWrap: 'wrap' }}>
-          {[['🔒','Buyer Protection'],['⚡','Auto Amazon fulfillment'],['📧','Instant email confirmation'],['🚚','Free delivery over £25'],['↩️','30-day easy returns']].map(([icon, label]) => (
+          {[['🔒','Buyer Protection'],['⚡','Auto Fulfillment'],['📧','Instant email confirmation'],['🚚','Free delivery over £25'],['↩️','14-day easy returns']].map(([icon, label]) => (
             <span key={label} style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 11, color: '#6b7280' }}>
               <span style={{ color: '#1a6fc4', fontSize: 15 }}>{icon}</span> {label}
             </span>
@@ -206,9 +206,9 @@ export default function Home({ products }) {
           <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 13, marginBottom: 24 }}>We handle everything — you just shop.</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 14, maxWidth: 900, margin: '0 auto' }}>
             {[
-              ['1','Browse & add to cart','Find products from our Amazon-linked catalogue'],
-              ['2','Secure checkout',     'Pay via Stripe — encrypted end-to-end'],
-              ['3','Auto-fulfilled',      'We place your Amazon order within seconds'],
+              ['1','Browse & add to cart','Find products from our catalogue'],
+              ['2','Secure Checkout',     'Pay via Stripe — encrypted end-to-end'],
+              ['3','Order Placement',      'We place your order within seconds'],
               ['4','Email confirmation',  'Full receipt + tracking number sent instantly'],
             ].map(([n,t,d]) => (
               <div key={n} style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 10, padding: '16px 12px' }}>

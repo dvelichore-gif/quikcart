@@ -103,7 +103,7 @@ export default function ProductPage({ product, related }) {
                 <div style={{ color: '#14549a', fontWeight: 600, marginBottom: 4 }}>🚚 Delivery</div>
                 <div style={{ color: '#444' }}>
                   {product.price >= 25
-                    ? '✓ FREE standard delivery — estimated 3–5 working days'
+                    ? '✓ FREE Standard delivery — Estimated 3–5 Working Days'
                     : '£2.99 standard delivery — or FREE on orders over £25'}
                 </div>
                 <div style={{ color: '#444', marginTop: 4 }}>📦 Auto-fulfilled via Amazon — ordered instantly when you pay</div>
@@ -117,7 +117,7 @@ export default function ProductPage({ product, related }) {
 
               {/* Features */}
               <div style={{ marginBottom: 14 }}>
-                {['Amazon-fulfilled — ordered the moment you pay', 'Full email confirmation with tracking number', '14-day return policy via QuikCart support'].map(f => (
+                {['Ordered the Moment you Pay', 'Full Email Confirmation with tracking number', '14-day return policy via QuikCart support'].map(f => (
                   <div key={f} style={{ display: 'flex', gap: 8, marginBottom: 6, fontSize: 13, color: '#1a1f2e', alignItems: 'flex-start' }}>
                     <span style={{ color: '#81B29A', flexShrink: 0 }}>✓</span> {f}
                   </div>
@@ -160,7 +160,7 @@ export default function ProductPage({ product, related }) {
 
               {/* Trust signals */}
               <div style={{ marginTop: 14, borderTop: '1px solid #e0e6ef', paddingTop: 12 }}>
-                {[['🔒','Secure payment via Stripe'],['⚡','Amazon order placed instantly'],['📧','Email confirmation sent to you'],['↩️','14-day return policy']].map(([icon, label]) => (
+                {[['🔒','Secure Payment'],['⚡','Order placed instantly'],['📧','Email confirmation sent to you'],['↩️','14-day return policy']].map(([icon, label]) => (
                   <div key={label} style={{ display: 'flex', gap: 7, marginBottom: 5, fontSize: 11, color: '#6b7280', alignItems: 'center' }}>
                     <span>{icon}</span> {label}
                   </div>
