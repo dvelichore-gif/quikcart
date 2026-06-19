@@ -92,7 +92,7 @@ export default function Navbar() {
 
         {/* Right side */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginLeft: 'auto', color: 'white', fontSize: 12, flexShrink: 0 }}>
-          <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.3, cursor: 'pointer' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.0, cursor: 'pointer' }}>
             <strong style={{ fontSize: 16 }}>Sign in</strong>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.3, cursor: 'pointer' }}>
