@@ -46,6 +46,15 @@ export default function Shop({ products }) {
     return list
   }, [products, search, cat, sort, minP, maxP, minRat])
 
+  // Function to reset to All categories
+  const resetToAll = () => {
+    setCat('All')
+    setSearch('')
+    setMinP('')
+    setMaxP('')
+    setMinRat(0)
+  }
+
   return (
     <>
       <Head>
@@ -60,10 +69,10 @@ export default function Shop({ products }) {
         <div style={{ background: '#14549a', padding: '14px 16px', color: 'white' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <h1 
-              onClick={() => setCat('All')}
+              onClick={resetToAll}
               style={{ fontSize: 18, fontWeight: 700, marginBottom: 10, cursor: 'pointer' }}
             >
-              {cat === 'All' ? 'All Products' : cat}
+              {cat === 'All' ? 'All Categories' : cat}
             </h1>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center' }}>
               <input
@@ -94,7 +103,7 @@ export default function Shop({ products }) {
           <aside style={{ background: 'white', padding: '16px 14px', borderRight: '1px solid #e0e6ef', minHeight: 600, position: 'sticky', top: 98 }}>
 
             <SbSection title="Category">
-              <FilterBtn active={cat === 'All'} onClick={() => setCat('All')}>All Categories</FilterBtn>
+              <FilterBtn active={cat === 'All'} onClick={resetToAll}>All Categories</FilterBtn>
               {CATEGORIES.map(c => (
                 <FilterBtn key={c} active={cat === c} onClick={() => setCat(c)}>{c}</FilterBtn>
               ))}
@@ -112,7 +121,7 @@ export default function Shop({ products }) {
 
             {/* Reset */}
             {(cat !== 'All' || search || minP || maxP || minRat > 0) && (
-              <button onClick={() => { setCat('All'); setSearch(''); setMinP(''); setMaxP(''); setMinRat(0) }}
+              <button onClick={resetToAll}
                 style={{ marginTop: 8, width: '100%', background: 'none', border: '1px solid #e0e6ef', borderRadius: 6, padding: '7px', fontSize: 12, color: '#6b7280', cursor: 'pointer', fontFamily: 'inherit' }}>
                 ✕ Clear all filters
               </button>
@@ -126,7 +135,7 @@ export default function Shop({ products }) {
                 <div style={{ fontSize: 40, marginBottom: 12 }}>🔍</div>
                 <h3 style={{ fontSize: 16, marginBottom: 6 }}>No products found</h3>
                 <p style={{ fontSize: 13 }}>Try adjusting your search or filters</p>
-                <button onClick={() => { setCat('All'); setSearch(''); setMinP(''); setMaxP(''); setMinRat(0) }}
+                <button onClick={resetToAll}
                   style={{ marginTop: 16, background: '#1a6fc4', color: 'white', border: 'none', padding: '9px 20px', borderRadius: 6, fontSize: 13, cursor: 'pointer' }}>
                   Clear filters
                 </button>
