@@ -108,7 +108,7 @@ export default function Navbar() {
 
       {/* ── SUBNAV ── */}
       <div style={{ background: '#14549a', display: 'flex', gap: 2, padding: '0 16px', overflowX: 'auto', height: 34, alignItems: 'center' }}>
-        <Link href="/shop" style={snStyle}>☰ All Categories</Link>
+        <span style={{ ...snStyle, cursor: 'default' }}>☰ Categories</span>
         {CATEGORIES.map(cat => (
           <Link key={cat} href={`/shop?cat=${encodeURIComponent(cat)}`} style={snStyle}>
             {cat}
